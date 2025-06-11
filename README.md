@@ -5,4 +5,4 @@
 </p>
 
 <p>Project developed to create a Dark Mode style for a static web page</p>
-<p>To access the project click <a href='https://to-do-list-js-dusky.vercel.app/'>here</a> </p>
+<p>To access the project click <a href='https://dark-mode-web-page.vercel.app/'>here</a> </p>
