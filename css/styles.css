@@ -1,0 +1,314 @@
+/* Variávels */
+
+:root {
+  /* Espaçamentos */
+  --spacing-y: 1rem;
+  --text-line-height: 1.5rem;
+
+  /* Header */
+  --header-padding-y: var(--spacing-y);
+  --header-content-height: var(--text-line-height);
+  --header-height: calc(2 * var(--header-padding-y) + var(--header-content-height));
+
+  /* Footer */
+  --footer-padding-y: var(--spacing-y);
+  --footer-content-height: var(--text-line-height);
+  --footer-height: calc(2 * var(--footer-padding-y) + var(--footer-content-height));
+
+  /* margem para card */
+  --margin-top-card: 4rem;
+}
+
+
+/* Zerar tudo */
+
+* {
+    font-family: Helvetica;
+    padding: 0;
+    margin: 0;
+    /* border box --> elementos n passam do limite */
+    box-sizing: border-box;
+}
+
+html, body {
+    /* Height de 100% preenche toda a tela */
+    padding: 0;
+    margin: 0;
+    background: #eceff1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Tiro que o box do check box fique aparecendo */
+/* Deixo apenas os itens */
+input[type='checkbox'] {
+    display: none;
+}
+
+/* Ajustar Link do github */
+#repository-link {
+    margin-top: 2rem;
+    background-color: #eceff1;
+    box-shadow: 0.5px 0.5px 10px 0.5px #000;
+    text-align: center;
+    padding: var(--footer-padding-y) 0;
+}
+
+#repository-link p {
+    margin: 0;
+    line-height: var(--text-line-height); /* Garante espaçamento interno razoável */
+    color: black;
+}
+
+#repository-link a {
+    color: darkblue;
+    text-decoration: none;
+}
+
+/* ícones */
+/* aumentar fonte;  */
+.bi {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.bi-moon{
+    display: none;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between; 
+    /* space between --> coloca os elemtos nos extremos */
+    align-items: center; 
+    /* align-items center alinha na veritcal */
+    background-color: #eceff1;
+    box-shadow: 0.5px 0.5px 10px 0.5px #000;
+    /* box-shadow --> sombra abaixo do elemento */
+    padding: var(--header-padding-y) 2rem;
+    position: relative;
+    /* position relative garante que box-shadow smp vai ser exibida */
+    line-height: var(--text-line-height);
+}
+
+/* MAIN */
+main {
+    display: block;
+    /* Flex de 1 faz o main ocupar o espaço restante entre header e footer */
+    flex: 1; 
+    /* display em block faz com que seu filho não ocupe todo o conteúdo */
+    justify-content: center;
+    padding-top: var(--margin-top-card);
+    /* min-height: calc(100vh - (var(--header-height) + var(--footer-height) + var(--margin-top-card))); */
+    
+}
+
+/* CARD */
+.card {
+    margin: 0 auto; 
+    /* A margem assim vai centralizar horizontalmente */
+    display: flex;
+    background-color: #fff;
+    width: 60%;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+    /* height: auto; */
+    /*align-items: flex-start;*/ /* importante para evitar stretch da imagem */
+    /* position: relative; */
+     /* necessário se a imagem transbordar */    
+    /* flex-direction: row; */
+}
+
+
+.card-details,
+.card-image {
+    padding: 2rem;
+    width: 50%;    
+}
+
+.card-details {
+    position: relative;
+    z-index: 10;
+    /* flex: 1; */
+}
+
+.card-image {
+    background-color: #eff7fc;
+    /* overflow: visible; garante que imagem pode "vazar" */
+    position: relative;
+    display: flex;
+    /* z-index: 5; */
+}
+
+.card-image span {
+    font-size: 4.5rem;
+    font-weight: 800;
+    max-width: 50%;
+    
+}
+
+.card img {
+    width: 130%;
+    position: absolute;
+    right: -1rem;
+    top: 10rem;
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.5));
+
+}
+
+/* Card-Details separado */
+.card-details h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    height: auto;
+}
+
+.subtitle {
+    color: #444;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.description {
+    line-height: 1.6rem;
+    margin-bottom: 2rem;
+    
+}
+
+.price-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+
+.btn {
+    background-color: #444;;
+    color: white;
+    width: 7rem;
+    height: 3rem;
+    border: none;
+    border-radius: 3rem;
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
+
+
+/* Para telas menores */
+
+/* DarkTheme */
+/* Vou altera as cores quando eu tiver a classe DARK em algo */
+.dark,
+.dark header,
+.dark #repository-link {
+    background-color: #263238;
+    color: #fff
+}
+
+.dark #repository-link p{
+    color: #fff;
+}
+.dark #repository-link a{
+    color: #aaa8a8;
+}
+
+.dark .bi-sun {
+    display: none;
+}
+
+.dark .card {
+    background-color: #37474f;
+}
+
+.dark .card-image {
+    background-color: #465157;
+}
+
+.dark .bi-moon{
+    display: block;
+}
+
+.dark .card-details h2,
+.dark span {
+    color: #fff;
+}
+
+.dark .card .btn {
+    background-color: #d1d1d1;
+    color:#0b151a ;
+}
+
+
+/* RESPONSIVO */
+@media (max-width:600px) {
+    main {
+        padding-top: 2rem;
+    }
+
+    .card {
+        width: 85%;
+    }
+
+    .card-details,
+    .card-image {
+        width: 40%;    
+    }
+
+    .card-image {
+        padding: 1rem;   
+    }
+
+    .card-details {
+        padding-left: 1.2;
+        padding-right: 1;
+        width: 60%;    
+    }
+    
+    .card-image span {
+    font-size: 2rem;
+  }
+  
+    .card img {
+        max-height: 22rem;
+    }  
+    .card-details h2 {
+    font-size: 2rem;
+}
+
+    .price {
+        font-weight: 900;
+        font-size: 1.2rem;
+        padding-right: 1;
+    }
+
+        .btn {
+        font-size: .7rem;
+        padding: .3rem;
+        margin-left: .2rem;
+
+    }
+  
+}
+
+@media (max-width: 1024px) and (min-width: 601px) {
+    .card-image span {
+    font-size: 4rem;
+  }
+    .card img {
+        max-height: 22rem;
+    }  
+}
