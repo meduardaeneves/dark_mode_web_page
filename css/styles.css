@@ -17,6 +17,13 @@
 
   /* margem para card */
   --margin-top-card: 4rem;
+
+  /* min height img */
+  --max-height-img: 27rem;
+  --top-padding-img: 10rem;
+
+  /* min-height-main */
+  --min-height-main: calc(var(--margin-top-card) + var(--max-height-img) + var(--top-padding-img) + 2rem)
 }
 
 
@@ -28,6 +35,10 @@
     margin: 0;
     /* border box --> elementos n passam do limite */
     box-sizing: border-box;
+}
+
+body {
+    overflow-y: auto;
 }
 
 html, body {
@@ -109,6 +120,7 @@ main {
     justify-content: center;
     padding-top: var(--margin-top-card);
     /* min-height: calc(100vh - (var(--header-height) + var(--footer-height) + var(--margin-top-card))); */
+    min-height: var(--min-height-main);
     
 }
 
@@ -160,8 +172,9 @@ main {
     width: 130%;
     position: absolute;
     right: -1rem;
-    top: 10rem;
+    top: var(--top-padding-img);
     filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.5));
+    max-height: var(--max-height-img);
 
 }
 
