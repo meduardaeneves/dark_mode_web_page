@@ -37,7 +37,7 @@ html, body {
     background: #eceff1;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100%;
 }
 
 .wrapper {
@@ -146,10 +146,11 @@ main {
     position: relative;
     display: flex;
     /* z-index: 5; */
+    overflow: visible;
 }
 
 .card-image span {
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 800;
     max-width: 50%;
     
@@ -212,6 +213,10 @@ main {
 
 /* DarkTheme */
 /* Vou altera as cores quando eu tiver a classe DARK em algo */
+.dark body {
+    background-color: #263238;
+}
+
 .dark,
 .dark header,
 .dark #repository-link {
@@ -269,7 +274,7 @@ main {
     }
 
     .card-image {
-        padding: 1rem;   
+        padding: 1rem;  
     }
 
     .card-details {
@@ -279,11 +284,11 @@ main {
     }
     
     .card-image span {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
     .card img {
-        max-height: 22rem;
+        max-height: 20rem;
     }  
     .card-details h2 {
     font-size: 2rem;
@@ -304,11 +309,11 @@ main {
   
 }
 
-@media (max-width: 1024px) and (min-width: 601px) {
+@media (max-width: 1069px) and (min-width: 601px) {
     .card-image span {
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
     .card img {
-        max-height: 22rem;
+        max-height: 20rem;
     }  
 }
